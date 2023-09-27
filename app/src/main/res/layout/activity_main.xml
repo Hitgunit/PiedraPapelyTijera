@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-    <TextView
+    <!-- Botón para iniciar/conectar Bluetooth -->
+    <Button
+        android:id="@+id/btnBluetooth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Conectar Bluetooth"
+        android:layout_marginBottom="24dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Área para el estado del juego -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Esperando jugador..."
+        android:layout_marginBottom="24dp"
+        android:textSize="18sp" />
+
+    <!-- Botones de elección: Piedra, Papel y Tijera -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp">
+
+        <Button
+            android:id="@+id/btnPiedra"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Piedra"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnPapel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Papel"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnTijera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tijera" />
+
+    </LinearLayout>
+
+    <!-- Resultados y elecciones -->
+    <TextView
+        android:id="@+id/tvTuEleccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu elección: --"
+        android:layout_marginBottom="8dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvEleccionOponente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eleccion del oponente: --"
+        android:layout_marginBottom="24dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultado: --"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
